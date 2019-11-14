@@ -10,11 +10,11 @@ namespace PriceEngineTest
     [TestClass]
     public class PriceEngineTest
     {
-
+        IPriceEngine priceEngine;
         [TestInitialize()]
         public void Initialize()
         {
-
+            priceEngine = new PriceEngine();
         }
         [TestMethod]
         public void TestGetPrice()
@@ -37,7 +37,6 @@ namespace PriceEngineTest
             decimal tax = 0;
             string insurer = "";
             string error = "";
-            IPriceEngine priceEngine = new PriceEngine();
             var expectedPrice = priceEngine.GetPrice(request, out tax, out insurer, out error);
 
             Assert.AreEqual(actualPrice, expectedPrice);
