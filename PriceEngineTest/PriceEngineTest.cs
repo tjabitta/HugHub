@@ -21,6 +21,7 @@ namespace PriceEngineTest
         {
             decimal actualPrice = Decimal.Parse("92.67");
             decimal actualTax = Decimal.Parse("11.1204");
+            string actualInsurer = "zxcvbnm";
             var request = new PriceRequest()
             {
                 RiskData = new RiskData()
@@ -41,6 +42,7 @@ namespace PriceEngineTest
 
             Assert.AreEqual(actualPrice, expectedPrice);
             Assert.AreEqual(actualTax, tax);
+            Assert.AreEqual(actualInsurer, insurer);
         }
     }
 }
