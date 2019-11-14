@@ -20,6 +20,7 @@ namespace PriceEngineTest
         public void TestGetPrice()
         {
             decimal actualPrice = Decimal.Parse("92.67");
+            decimal actualTax = Decimal.Parse("11.1204");
             var request = new PriceRequest()
             {
                 RiskData = new RiskData()
@@ -39,6 +40,7 @@ namespace PriceEngineTest
             var expectedPrice = priceEngine.GetPrice(request, out tax, out insurer, out error);
 
             Assert.AreEqual(actualPrice, expectedPrice);
+            Assert.AreEqual(actualTax, tax);
         }
     }
 }
